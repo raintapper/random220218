@@ -1,0 +1,9 @@
+{% if form.errors %}
+<p> This is an error: </p> {{ form.errors }}
+{% endif %}
+
+<form method="POST"> {% csrf_token %}
+
+	{{ form.as_p }}	
+	 <button type='submit' placeholder="Save"> Save </button>
+</form>

@@ -1,0 +1,26 @@
+
+<!--{% if request.user.is_authenticated %}
+<h1>Hello {{ user.username }}</h1>
+{% endif %}-->
+
+  <div class="navbar-header">
+    <div class="inner">
+      <h3 class="masthead-brand">inniin</h3>
+
+      <nav class="nav nav-masthead">
+
+        <a class="nav-link" href='{% url "CHI_home" %}'>中文</a>
+        <a class="nav-link" href='{% url "ENG_home" %}'>English</a>
+        <a class="nav-link" href='{% url "about" %}'>Findinn</a>
+        <a class="nav-link" href='{% url "contact" %}'>Postinn</a>
+        <!--
+        
+        
+        
+      -->
+        <!--{% if request.user.is_authenticated %}-->
+		<!--{% endif %}-->
+      </nav>
+    </div>
+  </div>
+

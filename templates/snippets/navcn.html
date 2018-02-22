@@ -1,0 +1,27 @@
+
+{% load i18n %}
+<!--{% if request.user.is_authenticated %}
+<h1>Hello {{ user.username }}</h1>
+{% endif %}-->
+
+  <div class="navbar-header">
+    <div class="inner">
+      <h3 class="masthead-brand">迎迎</h3>
+
+      <nav class="nav nav-masthead">
+
+        <a class="nav-link" href='{% url "CHI_home" %}'>中文</a>
+        <a class="nav-link" href='{% url "ENG_home" %}'>English</a>
+        <a class="nav-link" href='{% url "aboutcn" %}'>我要租房</a>
+        <a class="nav-link" href='{% url "contactcn" %}'>出租房间</a>
+        <!--
+        
+        
+        
+      -->
+        <!--{% if request.user.is_authenticated %}-->
+		<!--{% endif %}-->
+      </nav>
+    </div>
+  </div>
+

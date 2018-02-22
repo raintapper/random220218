@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+	<div class='row'>
+	<div class='col-sm-12 text-center col-sm-offset-3'>
+	
+	
+	<h3><a href='{% url "roomrentals:archive_day" year=yyear month=ymonth day=yday %}'>previous day hometemplate</a>
+	<h1> {{ today }} </h1>
+	<h3><a href='{% url "roomrentals:archive_day" year=tyear month=tmonth day=tday %}'>next day</a>	
+	
+	{% for obj in object_list %}
+
+
+
+	
+
+		<div class="card card-inverse" style="background-color: #333; border-color: #333;">
+			
+			<h4>{{ obj.appointmenttime }}</h4>
+			<p>{{ obj.itemdesc }}</p>
+			<p>{{ obj.itemnote }}</p>
+		
+		<ul>
+			{% for item in obj.item_set.all %}
+			<li style='margin-bottom: 15px'>{{ obj.itemdesc }}</li>
+				{% for others in obj.get_itemdesc %}
+					<a href='{{ request.path }}?q= {{others}}'>{{ others }}</a>
+				{% endfor %}
+			{% endfor %}
+		</ul>
+		</div>
+		<p>
+		</p>
+{% endfor %}
+
+	</div>
+	</div>
+
+{% endblock %}

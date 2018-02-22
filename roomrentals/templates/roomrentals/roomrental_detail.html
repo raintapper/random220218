@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block head_title %}Inn Items || {{ block.super }}{% endblock head_title %}
+
+{% block content %}
+<h1> {{ object.roomrental.type }} </h1>
+<p> Location: {{ object.propertyitem.title }} </p>
+
+{% if object.itemdesc %}
+	<ul>
+			Location Details:
+
+			<ul>
+				{% for item in object.get_itemdesc %}
+				<li>{{ item }}</li>
+				{% endfor %}
+			</ul><br/>
+			{% endif %}
+			{% if object.itemdesc %}
+			Excludes:
+			<ul>
+				{% for item in object.get_itemnote %}
+				<li>{{ item }}</li>
+				{% endfor %}
+			</ul>
+			{% endif %}
+	
+	
+		</li>
+	</ul>
+
+{% endblock %}

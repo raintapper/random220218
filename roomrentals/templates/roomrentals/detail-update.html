@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block head_title %}Inn Items || {{ block.super }}{% endblock head_title %}
+
+{% block content %}
+<h1> {{ form.instance.itemtype }} </h1>
+<p> Location: {{ form.instance.title }} </p>
+
+{% if form.instance.itemdesc %}
+	<ul>
+			Location Details:
+
+			<ul>
+				{% for item in form.instance.get_itemdesc %}
+				<li>{{ item }}</li>
+				{% endfor %}
+			</ul><br/>
+			{% endif %}
+			{% if form.instance.itemdesc %}
+			Excludes:
+			<ul>
+				{% for item in form.instance.get_itemnote %}
+				<li>{{ item }}</li>
+				{% endfor %}
+			</ul>
+			{% endif %}
+	
+	
+		</li>
+	</ul>
+
+<h3>Make Changes</h3>	
+{% include 'snippets/form-snippet.html' with form=form %}
+
+{% endblock %}
